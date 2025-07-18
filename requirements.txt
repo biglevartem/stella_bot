@@ -1,0 +1,8 @@
+aiohttp
+aiogram>=3.0
+Flask
+SQLAlchemy
+requests
+beautifulsoup4
+openai
+python-dotenv
