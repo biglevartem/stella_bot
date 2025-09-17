@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felo Консультант</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <aside class="info-panel">
+        <h1>Felo</h1>
+        <p class="tagline">Персональный подбор функциональных продуктов</p>
+        <section>
+          <h2>Как это работает</h2>
+          <ol>
+            <li>Опишите цель: энергия, сон, иммунитет или концентрация.</li>
+            <li>Уточните любимый формат или вкус.</li>
+            <li>Получите рекомендации и инструкции по заказу.</li>
+          </ol>
+        </section>
+        <section class="contacts">
+          <h2>Нужна помощь?</h2>
+          <p>Телеграм: <a href="https://t.me/felo_support" target="_blank">@felo_support</a></p>
+          <p>Почта: <a href="mailto:support@felo.example">support@felo.example</a></p>
+          <p>Телефон: +7 (495) 000-00-00</p>
+        </section>
+        <section class="telegram-cta">
+          <h2>Есть Telegram бот</h2>
+          <p>
+            Запустите <strong>@felo_demo_bot</strong> или разверните собственного помощника
+            по инструкции в репозитории.
+          </p>
+        </section>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <h2>Консультант Felo</h2>
+            <p>Спросите про состав, вкус и условия доставки</p>
+          </div>
+          <button id="restartChat" class="restart-button" type="button">Начать заново</button>
+        </header>
+
+        <section class="chat-window" id="chatWindow" aria-live="polite"></section>
+
+        <section class="quick-actions" id="quickActions" aria-label="Быстрые запросы">
+          <button data-intent="list">Показать все продукты</button>
+          <button data-intent="need_energy">Хочу больше энергии</button>
+          <button data-intent="need_focus">Нужна концентрация</button>
+          <button data-intent="need_sleep">Хочу лучше спать</button>
+          <button data-intent="need_immunity">Укрепить иммунитет</button>
+        </section>
+
+        <form id="chatForm" class="chat-form" autocomplete="off">
+          <label class="sr-only" for="userInput">Сообщение</label>
+          <input
+            id="userInput"
+            type="text"
+            placeholder="Спросите про продукт или напишите свою задачу"
+            required
+          />
+          <button type="submit" class="send-button" aria-label="Отправить">Отправить</button>
+        </form>
+      </main>
+    </div>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="bubble">
+          <p></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
